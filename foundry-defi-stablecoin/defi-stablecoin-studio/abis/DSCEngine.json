@@ -1,0 +1,1851 @@
+{
+    "abi": [
+        {
+            "type": "constructor",
+            "inputs": [
+                {
+                    "name": "tokenAddresses",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                },
+                {
+                    "name": "priceFeedAddresses",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                },
+                {
+                    "name": "dscAddress",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "_burnDsc",
+            "inputs": [
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "onBehalfOf",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "dscFrom",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "_calculateHealthFactor",
+            "inputs": [
+                {
+                    "name": "totalDscMinted",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "collateralValueInUsd",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "_getAccountInformation",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "totalDscMinted",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "collateralValueInUsd",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "_healthFactor",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "_redeemCollateral",
+            "inputs": [
+                {
+                    "name": "tokenCollateralAddress",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "amountCollateral",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "from",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "to",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "_revertIfHealthFactorIsBroken",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "burnDsc",
+            "inputs": [
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "calculateHealthFactor",
+            "inputs": [
+                {
+                    "name": "totallDscMinted",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "collateralValueInUsd",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "depositCollateral",
+            "inputs": [
+                {
+                    "name": "tokenCollateralAddress",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "amountCollateral",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "depostitCollateralAndMintDsc",
+            "inputs": [
+                {
+                    "name": "tokenCollateralAddress",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "amountCollateral",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "amountDscToMint",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "getAccountCollateralValue",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "totalCollateralValueInUsd",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getAccountInformation",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "totalDscMinted",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "collateralValueInUsd",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getCollateralBalanceOfUser",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "token",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getCollateralTokenPriceFeed",
+            "inputs": [
+                {
+                    "name": "token",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getCollateralTokens",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getDsc",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getHealthFactor",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getLiquidationBonus",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getLiquidationThreshold",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getMinHealthFactor",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getTokenAmountFromUsd",
+            "inputs": [
+                {
+                    "name": "tokenCollateralAddress",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "debtToCover",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "getUsdValue",
+            "inputs": [
+                {
+                    "name": "token",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "i_dsc",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "contract DecentralizedStableCoin"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "liquidate",
+            "inputs": [
+                {
+                    "name": "tokenCollateralAddress",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "debtToCover",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "mintDsc",
+            "inputs": [
+                {
+                    "name": "amountDscToMint",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "redeemCollateral",
+            "inputs": [
+                {
+                    "name": "tokenCollateralAddress",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "amountCollateral",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "redeemCollateralForDsc",
+            "inputs": [
+                {
+                    "name": "tokenCollateralAddress",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "amountCollateral",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "amountDscToBurn",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "s_DSCMinted",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "amountDscMinted",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "s_collateralDepositsed",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "token",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "s_collateralTokens",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "s_priceFeeds",
+            "inputs": [
+                {
+                    "name": "token",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "priceFeed",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "totalCollateralValue",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "event",
+            "name": "CollateralDeposited",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "token",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "CollateralRedeemed",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "token",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "DscBurned",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "DscMinted",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "Liquidated",
+            "inputs": [
+                {
+                    "name": "user",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "repayer",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "error",
+            "name": "DSCEngine_BreakHealthFactor",
+            "inputs": [
+                {
+                    "name": "healthFactor",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ]
+        },
+        {
+            "type": "error",
+            "name": "DSCEngine_HealthFactorOk",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "DSCEngine_MintFailed",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "DSCEngine_NeedsMoreThanZeroAmount",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "DSCEngine_NotAllowedToken",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "DSCEngine_TokenAddressesAndPriceFeedAddressesMustMatchSameLength",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "DSCEngine_TransferFromFailed",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "ReentrancyGuardReentrantCall",
+            "inputs": []
+        }
+    ],
+    "bytecode": {
+        "object": "0x60a060405234801561000f575f5ffd5b5060405161285e38038061285e833981810160405281019061003191906103fe565b600161004f61004461021160201b60201c565b61023a60201b60201c565b5f01819055508151835114610090576040517f611e2f5e00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5f5f90505b83518110156101d4578281815181106100b1576100b0610486565b5b602002602001015160015f8684815181106100cf576100ce610486565b5b602002602001015173ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600484828151811061016257610161610486565b5b6020026020010151908060018154018082558091505060019003905f5260205f20015f9091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508080600101915050610095565b508073ffffffffffffffffffffffffffffffffffffffff1660808173ffffffffffffffffffffffffffffffffffffffff16815250505050506104b3565b5f7f9b779b17422d0df92223018b32b4d1fa46e071723d6817e2486d003becc55f005f1b905090565b5f819050919050565b5f604051905090565b5f5ffd5b5f5ffd5b5f5ffd5b5f601f19601f8301169050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b61029e82610258565b810181811067ffffffffffffffff821117156102bd576102bc610268565b5b80604052505050565b5f6102cf610243565b90506102db8282610295565b919050565b5f67ffffffffffffffff8211156102fa576102f9610268565b5b602082029050602081019050919050565b5f5ffd5b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f6103388261030f565b9050919050565b6103488161032e565b8114610352575f5ffd5b50565b5f815190506103638161033f565b92915050565b5f61037b610376846102e0565b6102c6565b9050808382526020820190506020840283018581111561039e5761039d61030b565b5b835b818110156103c757806103b38882610355565b8452602084019350506020810190506103a0565b5050509392505050565b5f82601f8301126103e5576103e4610254565b5b81516103f5848260208601610369565b91505092915050565b5f5f5f606084860312156104155761041461024c565b5b5f84015167ffffffffffffffff81111561043257610431610250565b5b61043e868287016103d1565b935050602084015167ffffffffffffffff81111561045f5761045e610250565b5b61046b868287016103d1565b925050604061047c86828701610355565b9150509250925092565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b6080516123776104e75f395f8181610ac901528181610b9f01528181610c7a0152818161174201526118c201526123775ff3fe608060405234801561000f575f5ffd5b50600436106101ee575f3560e01c80637be564fc1161010d578063c660d112116100a0578063deb8e0181161006f578063deb8e01814610628578063f419ea9c14610646578063f687660814610662578063fe6bcd7c1461067e576101ee565b8063c660d1121461057c578063c9b7c327146105ac578063d1391377146105c8578063d63f8e59146105f8576101ee565b80639dae3b92116100dc5780639dae3b92146104e2578063a5d5db0c14610512578063afea2e481461052e578063b58eb63f1461055e576101ee565b80637be564fc146104475780637d1a4450146104785780638c1ae6c8146104a85780639acd81b3146104c6576101ee565b80634e57f3c61161018557806359fc95831161015457806359fc9583146103c15780635e338bb3146103dd5780635e37f988146103fb5780636ecd725c14610417576101ee565b80634e57f3c61461033b578063507898f01461035757806359451b6d1461037357806359aa9e72146103a3576101ee565b80632af8533d116101c15780632af8533d1461028c57806331e92b83146102bd578063347ecc91146102ed5780634ae9b8bc1461031d576101ee565b806301f72884146101f25780631c08adda1461022257806326c01303146102525780632a6739a21461026e575b5f5ffd5b61020c60048036038101906102079190611af9565b6106ae565b6040516102199190611b46565b60405180910390f35b61023c60048036038101906102379190611bb9565b6106c1565b6040516102499190611bf3565b60405180910390f35b61026c60048036038101906102679190611c0c565b610726565b005b610276610834565b6040516102839190611b46565b60405180910390f35b6102a660048036038101906102a19190611bb9565b610839565b6040516102b4929190611c5c565b60405180910390f35b6102d760048036038101906102d29190611c83565b61088b565b6040516102e49190611b46565b60405180910390f35b61030760048036038101906103029190611af9565b61090d565b6040516103149190611b46565b60405180910390f35b610325610982565b6040516103329190611b46565b60405180910390f35b61035560048036038101906103509190611cc1565b61098a565b005b610371600480360381019061036c9190611bb9565b6109a2565b005b61038d60048036038101906103889190611bb9565b610a01565b60405161039a9190611bf3565b60405180910390f35b6103ab610a31565b6040516103b89190611b46565b60405180910390f35b6103db60048036038101906103d69190611d11565b610a39565b005b6103e5610c78565b6040516103f29190611dbc565b60405180910390f35b61041560048036038101906104109190611dd5565b610c9c565b005b610431600480360381019061042c9190611bb9565b610e8f565b60405161043e9190611b46565b60405180910390f35b610461600480360381019061045c9190611bb9565b610eb2565b60405161046f929190611c5c565b60405180910390f35b610492600480360381019061048d9190611bb9565b610eca565b60405161049f9190611b46565b60405180910390f35b6104b0610fc4565b6040516104bd9190611b46565b60405180910390f35b6104e060048036038101906104db9190611e39565b610fd3565b005b6104fc60048036038101906104f79190611c83565b611053565b6040516105099190611b46565b60405180910390f35b61052c60048036038101906105279190611e39565b611073565b005b61054860048036038101906105439190611e39565b611355565b6040516105559190611b46565b60405180910390f35b6105666114a5565b6040516105739190611f2e565b60405180910390f35b61059660048036038101906105919190611e39565b611530565b6040516105a39190611b46565b60405180910390f35b6105c660048036038101906105c19190611f4e565b6116a1565b005b6105e260048036038101906105dd9190611bb9565b61186f565b6040516105ef9190611b46565b60405180910390f35b610612600480360381019061060d9190611f4e565b611884565b60405161061f9190611bf3565b60405180910390f35b6106306118bf565b60405161063d9190611bf3565b60405180910390f35b610660600480360381019061065b9190611cc1565b6118e6565b005b61067c60048036038101906106779190611f4e565b611984565b005b61069860048036038101906106939190611bb9565b6119e6565b6040516106a59190611b46565b60405180910390f35b5f6106b9838361090d565b905092915050565b5f60015f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b670de0b6b3a764000061073883610e8f565b1061076f576040517f356636af00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5f61077a8483611355565b90505f6064600a8361078c9190611fa6565b6107969190612014565b90505f81836107a59190612044565b90506107b386828733610c9c565b6107be848633610a39565b6107c7856109a2565b3373ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff167fde0aa27286f5cb3a4ed853dc4823ead62d63e92cdf13de09d6aece56970721a4866040516108249190611b46565b60405180910390a3505050505050565b5f5481565b5f5f60035f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f2054915061088483610eca565b9050915091565b5f60025f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f2054905092915050565b5f5f830361093d577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff905061097c565b5f606460328461094d9190611fa6565b6109579190612014565b905083670de0b6b3a76400008261096e9190611fa6565b6109789190612014565b9150505b92915050565b5f6032905090565b6109948383611073565b61099d816116a1565b505050565b5f6109ac82610e8f565b9050670de0b6b3a764000081101581906109fc576040517f36b76f890000000000000000000000000000000000000000000000000000000081526004016109f39190611b46565b60405180910390fd5b505050565b6001602052805f5260405f205f915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b5f600a905090565b825f8111610a73576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8360035f8573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f828254610abf9190612077565b925050819055505f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166323b872dd8430886040518463ffffffff1660e01b8152600401610b24939291906120aa565b6020604051808303815f875af1158015610b40573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610b649190612114565b905080610b9d576040517f19e4666800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166342966c68866040518263ffffffff1660e01b8152600401610bf69190611b46565b5f604051808303815f87803b158015610c0d575f5ffd5b505af1158015610c1f573d5f5f3e3d5ffd5b505050508373ffffffffffffffffffffffffffffffffffffffff167ff412005626bd5545446b80adbebf2936ed08f5c5796808db07c640a864a1419786604051610c699190611b46565b60405180910390a25050505050565b7f000000000000000000000000000000000000000000000000000000000000000081565b825f8111610cd6576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8360025f8573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f828254610d5d9190612077565b925050819055508473ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fa5f9505801b85736b93411e5083d5a6003f3add45d82754efd49b4cca6b8e00786604051610dc19190611b46565b60405180910390a35f8573ffffffffffffffffffffffffffffffffffffffff1663a9059cbb84876040518363ffffffff1660e01b8152600401610e0592919061213f565b6020604051808303815f875af1158015610e21573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610e459190612114565b905080610e7e576040517f19e4666800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b610e87846109a2565b505050505050565b5f5f5f610e9b84610839565b91509150610ea9828261090d565b92505050919050565b5f5f610ebd83610839565b8092508193505050915091565b5f5f5f90505b600480549050811015610fbe575f60048281548110610ef257610ef1612166565b5b905f5260205f20015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690505f60025f8673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f20549050610fa28282611530565b84610fad9190612044565b935050508080600101915050610ed0565b50919050565b5f670de0b6b3a7640000905090565b805f811161100d576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6110156119f7565b61102183833333610c9c565b5f61102c8484611530565b9050805f5f82825461103e9190612077565b925050819055505061104e611a19565b505050565b6002602052815f5260405f20602052805f5260405f205f91509150505481565b815f73ffffffffffffffffffffffffffffffffffffffff1660015f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1603611135576040517f68bc43a100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b815f811161116f576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6111776119f7565b8260025f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8282546111fe9190612044565b925050819055508373ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167ff1c0dd7e9b98bbff859029005ef89b127af049cd18df1a8d79f0b7e019911e56856040516112629190611b46565b60405180910390a35f8473ffffffffffffffffffffffffffffffffffffffff166323b872dd3330876040518463ffffffff1660e01b81526004016112a8939291906120aa565b6020604051808303815f875af11580156112c4573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906112e89190612114565b90505f6112f58686611530565b9050805f5f8282546113079190612044565b9250508190555081611345576040517f19e4666800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b505061134f611a19565b50505050565b5f5f60015f8573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690505f8173ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa158015611400573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906114249190612219565b5050509150505f811361146c576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401611463906122ea565b60405180910390fd5b6402540be4008161147d9190611fa6565b670de0b6b3a7640000856114919190611fa6565b61149b9190612014565b9250505092915050565b6060600480548060200260200160405190810160405280929190818152602001828054801561152657602002820191905f5260205f20905b815f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116114dd575b5050505050905090565b5f5f60015f8573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690505f8173ffffffffffffffffffffffffffffffffffffffff1673__$1f06ac8d622ce42796cee98ba1044ce165$__632ba1c96a90916040518263ffffffff1660e01b81526004016115e19190612328565b60a060405180830381865af41580156115fc573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906116209190612219565b5050509150505f8113611668576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161165f906122ea565b60405180910390fd5b670de0b6b3a7640000846402540be400836116839190611fa6565b61168d9190611fa6565b6116979190612014565b9250505092915050565b805f81116116db576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6116e36119f7565b8160035f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f82825461172f9190612044565b9250508190555061173f336109a2565b5f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166340c10f1933856040518363ffffffff1660e01b815260040161179b92919061213f565b6020604051808303815f875af11580156117b7573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906117db9190612114565b905080611814576040517fd2c38ade00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b3373ffffffffffffffffffffffffffffffffffffffff167f8db25d285cfee36b751645e359b467e6607747eb227c55242e25bf4030ebdb2e8460405161185a9190611b46565b60405180910390a25061186b611a19565b5050565b6003602052805f5260405f205f915090505481565b60048181548110611893575f80fd5b905f5260205f20015f915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b5f7f0000000000000000000000000000000000000000000000000000000000000000905090565b815f8111611920576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b815f811161195a576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6119626119f7565b61196b83611984565b6119758585610fd3565b61197d611a19565b5050505050565b805f81116119be576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6119c66119f7565b6119d1823333610a39565b6119da336109a2565b6119e2611a19565b5050565b5f6119f082610e8f565b9050919050565b6119ff611a33565b6002611a11611a0c611a74565b611a9d565b5f0181905550565b6001611a2b611a26611a74565b611a9d565b5f0181905550565b611a3b611aa6565b15611a72576040517f3ee5aeb500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b565b5f7f9b779b17422d0df92223018b32b4d1fa46e071723d6817e2486d003becc55f005f1b905090565b5f819050919050565b5f6002611ab9611ab4611a74565b611a9d565b5f015414905090565b5f5ffd5b5f819050919050565b611ad881611ac6565b8114611ae2575f5ffd5b50565b5f81359050611af381611acf565b92915050565b5f5f60408385031215611b0f57611b0e611ac2565b5b5f611b1c85828601611ae5565b9250506020611b2d85828601611ae5565b9150509250929050565b611b4081611ac6565b82525050565b5f602082019050611b595f830184611b37565b92915050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f611b8882611b5f565b9050919050565b611b9881611b7e565b8114611ba2575f5ffd5b50565b5f81359050611bb381611b8f565b92915050565b5f60208284031215611bce57611bcd611ac2565b5b5f611bdb84828501611ba5565b91505092915050565b611bed81611b7e565b82525050565b5f602082019050611c065f830184611be4565b92915050565b5f5f5f60608486031215611c2357611c22611ac2565b5b5f611c3086828701611ba5565b9350506020611c4186828701611ba5565b9250506040611c5286828701611ae5565b9150509250925092565b5f604082019050611c6f5f830185611b37565b611c7c6020830184611b37565b9392505050565b5f5f60408385031215611c9957611c98611ac2565b5b5f611ca685828601611ba5565b9250506020611cb785828601611ba5565b9150509250929050565b5f5f5f60608486031215611cd857611cd7611ac2565b5b5f611ce586828701611ba5565b9350506020611cf686828701611ae5565b9250506040611d0786828701611ae5565b9150509250925092565b5f5f5f60608486031215611d2857611d27611ac2565b5b5f611d3586828701611ae5565b9350506020611d4686828701611ba5565b9250506040611d5786828701611ba5565b9150509250925092565b5f819050919050565b5f611d84611d7f611d7a84611b5f565b611d61565b611b5f565b9050919050565b5f611d9582611d6a565b9050919050565b5f611da682611d8b565b9050919050565b611db681611d9c565b82525050565b5f602082019050611dcf5f830184611dad565b92915050565b5f5f5f5f60808587031215611ded57611dec611ac2565b5b5f611dfa87828801611ba5565b9450506020611e0b87828801611ae5565b9350506040611e1c87828801611ba5565b9250506060611e2d87828801611ba5565b91505092959194509250565b5f5f60408385031215611e4f57611e4e611ac2565b5b5f611e5c85828601611ba5565b9250506020611e6d85828601611ae5565b9150509250929050565b5f81519050919050565b5f82825260208201905092915050565b5f819050602082019050919050565b611ea981611b7e565b82525050565b5f611eba8383611ea0565b60208301905092915050565b5f602082019050919050565b5f611edc82611e77565b611ee68185611e81565b9350611ef183611e91565b805f5b83811015611f21578151611f088882611eaf565b9750611f1383611ec6565b925050600181019050611ef4565b5085935050505092915050565b5f6020820190508181035f830152611f468184611ed2565b905092915050565b5f60208284031215611f6357611f62611ac2565b5b5f611f7084828501611ae5565b91505092915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f611fb082611ac6565b9150611fbb83611ac6565b9250828202611fc981611ac6565b91508282048414831517611fe057611fdf611f79565b5b5092915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f61201e82611ac6565b915061202983611ac6565b92508261203957612038611fe7565b5b828204905092915050565b5f61204e82611ac6565b915061205983611ac6565b925082820190508082111561207157612070611f79565b5b92915050565b5f61208182611ac6565b915061208c83611ac6565b92508282039050818111156120a4576120a3611f79565b5b92915050565b5f6060820190506120bd5f830186611be4565b6120ca6020830185611be4565b6120d76040830184611b37565b949350505050565b5f8115159050919050565b6120f3816120df565b81146120fd575f5ffd5b50565b5f8151905061210e816120ea565b92915050565b5f6020828403121561212957612128611ac2565b5b5f61213684828501612100565b91505092915050565b5f6040820190506121525f830185611be4565b61215f6020830184611b37565b9392505050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b5f69ffffffffffffffffffff82169050919050565b6121b181612193565b81146121bb575f5ffd5b50565b5f815190506121cc816121a8565b92915050565b5f819050919050565b6121e4816121d2565b81146121ee575f5ffd5b50565b5f815190506121ff816121db565b92915050565b5f8151905061221381611acf565b92915050565b5f5f5f5f5f60a0868803121561223257612231611ac2565b5b5f61223f888289016121be565b9550506020612250888289016121f1565b945050604061226188828901612205565b935050606061227288828901612205565b9250506080612283888289016121be565b9150509295509295909350565b5f82825260208201905092915050565b7f496e76616c6964207072696365000000000000000000000000000000000000005f82015250565b5f6122d4600d83612290565b91506122df826122a0565b602082019050919050565b5f6020820190508181035f830152612301816122c8565b9050919050565b5f61231282611d8b565b9050919050565b61232281612308565b82525050565b5f60208201905061233b5f830184612319565b9291505056fea26469706673582212203c7e73cfba0e936ecb09f98603ba7912d366f6781ce76dde51322127ecfb9fc464736f6c634300081e0033",
+        "sourceMap": "498:14184:28:-:0;;;3477:560;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2365:1:24;2539:46;:29;:27;;;:29;;:::i;:::-;:44;;;:46;;:::i;:::-;:52;;:66;;;;3665:18:28;:25;3640:14;:21;:50;3619:161;;;;;;;;;;;;;;;;;3795:9;3807:1;3795:13;;3790:188;3814:14;:21;3810:1;:25;3790:188;;;3890:18;3909:1;3890:21;;;;;;;;:::i;:::-;;;;;;;;3856:12;:31;3869:14;3884:1;3869:17;;;;;;;;:::i;:::-;;;;;;;;3856:31;;;;;;;;;;;;;;;;:55;;;;;;;;;;;;;;;;;;3925:18;3949:14;3964:1;3949:17;;;;;;;;:::i;:::-;;;;;;;;3925:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3837:3;;;;;;;3790:188;;;;4019:10;3987:43;;;;;;;;;;3477:560;;;498:14184;;4636:127:24;4706:7;1505:66;4732:24;;4725:31;;4636:127;:::o;2679:163:25:-;2740:21;2822:4;2812:14;;2679:163;;;:::o;7:75:32:-;40:6;73:2;67:9;57:19;;7:75;:::o;88:117::-;197:1;194;187:12;211:117;320:1;317;310:12;334:117;443:1;440;433:12;457:102;498:6;549:2;545:7;540:2;533:5;529:14;525:28;515:38;;457:102;;;:::o;565:180::-;613:77;610:1;603:88;710:4;707:1;700:15;734:4;731:1;724:15;751:281;834:27;856:4;834:27;:::i;:::-;826:6;822:40;964:6;952:10;949:22;928:18;916:10;913:34;910:62;907:88;;;975:18;;:::i;:::-;907:88;1015:10;1011:2;1004:22;794:238;751:281;;:::o;1038:129::-;1072:6;1099:20;;:::i;:::-;1089:30;;1128:33;1156:4;1148:6;1128:33;:::i;:::-;1038:129;;;:::o;1173:311::-;1250:4;1340:18;1332:6;1329:30;1326:56;;;1362:18;;:::i;:::-;1326:56;1412:4;1404:6;1400:17;1392:25;;1472:4;1466;1462:15;1454:23;;1173:311;;;:::o;1490:117::-;1599:1;1596;1589:12;1613:126;1650:7;1690:42;1683:5;1679:54;1668:65;;1613:126;;;:::o;1745:96::-;1782:7;1811:24;1829:5;1811:24;:::i;:::-;1800:35;;1745:96;;;:::o;1847:122::-;1920:24;1938:5;1920:24;:::i;:::-;1913:5;1910:35;1900:63;;1959:1;1956;1949:12;1900:63;1847:122;:::o;1975:143::-;2032:5;2063:6;2057:13;2048:22;;2079:33;2106:5;2079:33;:::i;:::-;1975:143;;;;:::o;2141:732::-;2248:5;2273:81;2289:64;2346:6;2289:64;:::i;:::-;2273:81;:::i;:::-;2264:90;;2374:5;2403:6;2396:5;2389:21;2437:4;2430:5;2426:16;2419:23;;2490:4;2482:6;2478:17;2470:6;2466:30;2519:3;2511:6;2508:15;2505:122;;;2538:79;;:::i;:::-;2505:122;2653:6;2636:231;2670:6;2665:3;2662:15;2636:231;;;2745:3;2774:48;2818:3;2806:10;2774:48;:::i;:::-;2769:3;2762:61;2852:4;2847:3;2843:14;2836:21;;2712:155;2696:4;2691:3;2687:14;2680:21;;2636:231;;;2640:21;2254:619;;2141:732;;;;;:::o;2896:385::-;2978:5;3027:3;3020:4;3012:6;3008:17;3004:27;2994:122;;3035:79;;:::i;:::-;2994:122;3145:6;3139:13;3170:105;3271:3;3263:6;3256:4;3248:6;3244:17;3170:105;:::i;:::-;3161:114;;2984:297;2896:385;;;;:::o;3287:1069::-;3425:6;3433;3441;3490:2;3478:9;3469:7;3465:23;3461:32;3458:119;;;3496:79;;:::i;:::-;3458:119;3637:1;3626:9;3622:17;3616:24;3667:18;3659:6;3656:30;3653:117;;;3689:79;;:::i;:::-;3653:117;3794:89;3875:7;3866:6;3855:9;3851:22;3794:89;:::i;:::-;3784:99;;3587:306;3953:2;3942:9;3938:18;3932:25;3984:18;3976:6;3973:30;3970:117;;;4006:79;;:::i;:::-;3970:117;4111:89;4192:7;4183:6;4172:9;4168:22;4111:89;:::i;:::-;4101:99;;3903:307;4249:2;4275:64;4331:7;4322:6;4311:9;4307:22;4275:64;:::i;:::-;4265:74;;4220:129;3287:1069;;;;;:::o;4362:180::-;4410:77;4407:1;4400:88;4507:4;4504:1;4497:15;4531:4;4528:1;4521:15;498:14184:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+        "linkReferences": {
+            "src/libraries/OracleLib.sol": {
+                "OracleLib": [
+                    {
+                        "start": 6802,
+                        "length": 20
+                    }
+                ]
+            }
+        }
+    },
+    "deployedBytecode": {
+        "object": "0x608060405234801561000f575f5ffd5b50600436106101ee575f3560e01c80637be564fc1161010d578063c660d112116100a0578063deb8e0181161006f578063deb8e01814610628578063f419ea9c14610646578063f687660814610662578063fe6bcd7c1461067e576101ee565b8063c660d1121461057c578063c9b7c327146105ac578063d1391377146105c8578063d63f8e59146105f8576101ee565b80639dae3b92116100dc5780639dae3b92146104e2578063a5d5db0c14610512578063afea2e481461052e578063b58eb63f1461055e576101ee565b80637be564fc146104475780637d1a4450146104785780638c1ae6c8146104a85780639acd81b3146104c6576101ee565b80634e57f3c61161018557806359fc95831161015457806359fc9583146103c15780635e338bb3146103dd5780635e37f988146103fb5780636ecd725c14610417576101ee565b80634e57f3c61461033b578063507898f01461035757806359451b6d1461037357806359aa9e72146103a3576101ee565b80632af8533d116101c15780632af8533d1461028c57806331e92b83146102bd578063347ecc91146102ed5780634ae9b8bc1461031d576101ee565b806301f72884146101f25780631c08adda1461022257806326c01303146102525780632a6739a21461026e575b5f5ffd5b61020c60048036038101906102079190611af9565b6106ae565b6040516102199190611b46565b60405180910390f35b61023c60048036038101906102379190611bb9565b6106c1565b6040516102499190611bf3565b60405180910390f35b61026c60048036038101906102679190611c0c565b610726565b005b610276610834565b6040516102839190611b46565b60405180910390f35b6102a660048036038101906102a19190611bb9565b610839565b6040516102b4929190611c5c565b60405180910390f35b6102d760048036038101906102d29190611c83565b61088b565b6040516102e49190611b46565b60405180910390f35b61030760048036038101906103029190611af9565b61090d565b6040516103149190611b46565b60405180910390f35b610325610982565b6040516103329190611b46565b60405180910390f35b61035560048036038101906103509190611cc1565b61098a565b005b610371600480360381019061036c9190611bb9565b6109a2565b005b61038d60048036038101906103889190611bb9565b610a01565b60405161039a9190611bf3565b60405180910390f35b6103ab610a31565b6040516103b89190611b46565b60405180910390f35b6103db60048036038101906103d69190611d11565b610a39565b005b6103e5610c78565b6040516103f29190611dbc565b60405180910390f35b61041560048036038101906104109190611dd5565b610c9c565b005b610431600480360381019061042c9190611bb9565b610e8f565b60405161043e9190611b46565b60405180910390f35b610461600480360381019061045c9190611bb9565b610eb2565b60405161046f929190611c5c565b60405180910390f35b610492600480360381019061048d9190611bb9565b610eca565b60405161049f9190611b46565b60405180910390f35b6104b0610fc4565b6040516104bd9190611b46565b60405180910390f35b6104e060048036038101906104db9190611e39565b610fd3565b005b6104fc60048036038101906104f79190611c83565b611053565b6040516105099190611b46565b60405180910390f35b61052c60048036038101906105279190611e39565b611073565b005b61054860048036038101906105439190611e39565b611355565b6040516105559190611b46565b60405180910390f35b6105666114a5565b6040516105739190611f2e565b60405180910390f35b61059660048036038101906105919190611e39565b611530565b6040516105a39190611b46565b60405180910390f35b6105c660048036038101906105c19190611f4e565b6116a1565b005b6105e260048036038101906105dd9190611bb9565b61186f565b6040516105ef9190611b46565b60405180910390f35b610612600480360381019061060d9190611f4e565b611884565b60405161061f9190611bf3565b60405180910390f35b6106306118bf565b60405161063d9190611bf3565b60405180910390f35b610660600480360381019061065b9190611cc1565b6118e6565b005b61067c60048036038101906106779190611f4e565b611984565b005b61069860048036038101906106939190611bb9565b6119e6565b6040516106a59190611b46565b60405180910390f35b5f6106b9838361090d565b905092915050565b5f60015f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050919050565b670de0b6b3a764000061073883610e8f565b1061076f576040517f356636af00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b5f61077a8483611355565b90505f6064600a8361078c9190611fa6565b6107969190612014565b90505f81836107a59190612044565b90506107b386828733610c9c565b6107be848633610a39565b6107c7856109a2565b3373ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff167fde0aa27286f5cb3a4ed853dc4823ead62d63e92cdf13de09d6aece56970721a4866040516108249190611b46565b60405180910390a3505050505050565b5f5481565b5f5f60035f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f2054915061088483610eca565b9050915091565b5f60025f8473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f2054905092915050565b5f5f830361093d577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff905061097c565b5f606460328461094d9190611fa6565b6109579190612014565b905083670de0b6b3a76400008261096e9190611fa6565b6109789190612014565b9150505b92915050565b5f6032905090565b6109948383611073565b61099d816116a1565b505050565b5f6109ac82610e8f565b9050670de0b6b3a764000081101581906109fc576040517f36b76f890000000000000000000000000000000000000000000000000000000081526004016109f39190611b46565b60405180910390fd5b505050565b6001602052805f5260405f205f915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b5f600a905090565b825f8111610a73576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8360035f8573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f828254610abf9190612077565b925050819055505f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166323b872dd8430886040518463ffffffff1660e01b8152600401610b24939291906120aa565b6020604051808303815f875af1158015610b40573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610b649190612114565b905080610b9d576040517f19e4666800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166342966c68866040518263ffffffff1660e01b8152600401610bf69190611b46565b5f604051808303815f87803b158015610c0d575f5ffd5b505af1158015610c1f573d5f5f3e3d5ffd5b505050508373ffffffffffffffffffffffffffffffffffffffff167ff412005626bd5545446b80adbebf2936ed08f5c5796808db07c640a864a1419786604051610c699190611b46565b60405180910390a25050505050565b7f000000000000000000000000000000000000000000000000000000000000000081565b825f8111610cd6576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b8360025f8573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f828254610d5d9190612077565b925050819055508473ffffffffffffffffffffffffffffffffffffffff168373ffffffffffffffffffffffffffffffffffffffff167fa5f9505801b85736b93411e5083d5a6003f3add45d82754efd49b4cca6b8e00786604051610dc19190611b46565b60405180910390a35f8573ffffffffffffffffffffffffffffffffffffffff1663a9059cbb84876040518363ffffffff1660e01b8152600401610e0592919061213f565b6020604051808303815f875af1158015610e21573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190610e459190612114565b905080610e7e576040517f19e4666800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b610e87846109a2565b505050505050565b5f5f5f610e9b84610839565b91509150610ea9828261090d565b92505050919050565b5f5f610ebd83610839565b8092508193505050915091565b5f5f5f90505b600480549050811015610fbe575f60048281548110610ef257610ef1612166565b5b905f5260205f20015f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690505f60025f8673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f20549050610fa28282611530565b84610fad9190612044565b935050508080600101915050610ed0565b50919050565b5f670de0b6b3a7640000905090565b805f811161100d576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6110156119f7565b61102183833333610c9c565b5f61102c8484611530565b9050805f5f82825461103e9190612077565b925050819055505061104e611a19565b505050565b6002602052815f5260405f20602052805f5260405f205f91509150505481565b815f73ffffffffffffffffffffffffffffffffffffffff1660015f8373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1603611135576040517f68bc43a100000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b815f811161116f576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6111776119f7565b8260025f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f8282546111fe9190612044565b925050819055508373ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff167ff1c0dd7e9b98bbff859029005ef89b127af049cd18df1a8d79f0b7e019911e56856040516112629190611b46565b60405180910390a35f8473ffffffffffffffffffffffffffffffffffffffff166323b872dd3330876040518463ffffffff1660e01b81526004016112a8939291906120aa565b6020604051808303815f875af11580156112c4573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906112e89190612114565b90505f6112f58686611530565b9050805f5f8282546113079190612044565b9250508190555081611345576040517f19e4666800000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b505061134f611a19565b50505050565b5f5f60015f8573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690505f8173ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa158015611400573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906114249190612219565b5050509150505f811361146c576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401611463906122ea565b60405180910390fd5b6402540be4008161147d9190611fa6565b670de0b6b3a7640000856114919190611fa6565b61149b9190612014565b9250505092915050565b6060600480548060200260200160405190810160405280929190818152602001828054801561152657602002820191905f5260205f20905b815f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116114dd575b5050505050905090565b5f5f60015f8573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f9054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690505f8173ffffffffffffffffffffffffffffffffffffffff1673__$1f06ac8d622ce42796cee98ba1044ce165$__632ba1c96a90916040518263ffffffff1660e01b81526004016115e19190612328565b60a060405180830381865af41580156115fc573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906116209190612219565b5050509150505f8113611668576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161165f906122ea565b60405180910390fd5b670de0b6b3a7640000846402540be400836116839190611fa6565b61168d9190611fa6565b6116979190612014565b9250505092915050565b805f81116116db576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6116e36119f7565b8160035f3373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f82825461172f9190612044565b9250508190555061173f336109a2565b5f7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff166340c10f1933856040518363ffffffff1660e01b815260040161179b92919061213f565b6020604051808303815f875af11580156117b7573d5f5f3e3d5ffd5b505050506040513d601f19601f820116820180604052508101906117db9190612114565b905080611814576040517fd2c38ade00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b3373ffffffffffffffffffffffffffffffffffffffff167f8db25d285cfee36b751645e359b467e6607747eb227c55242e25bf4030ebdb2e8460405161185a9190611b46565b60405180910390a25061186b611a19565b5050565b6003602052805f5260405f205f915090505481565b60048181548110611893575f80fd5b905f5260205f20015f915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b5f7f0000000000000000000000000000000000000000000000000000000000000000905090565b815f8111611920576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b815f811161195a576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6119626119f7565b61196b83611984565b6119758585610fd3565b61197d611a19565b5050505050565b805f81116119be576040517fa95cab6400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6119c66119f7565b6119d1823333610a39565b6119da336109a2565b6119e2611a19565b5050565b5f6119f082610e8f565b9050919050565b6119ff611a33565b6002611a11611a0c611a74565b611a9d565b5f0181905550565b6001611a2b611a26611a74565b611a9d565b5f0181905550565b611a3b611aa6565b15611a72576040517f3ee5aeb500000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b565b5f7f9b779b17422d0df92223018b32b4d1fa46e071723d6817e2486d003becc55f005f1b905090565b5f819050919050565b5f6002611ab9611ab4611a74565b611a9d565b5f015414905090565b5f5ffd5b5f819050919050565b611ad881611ac6565b8114611ae2575f5ffd5b50565b5f81359050611af381611acf565b92915050565b5f5f60408385031215611b0f57611b0e611ac2565b5b5f611b1c85828601611ae5565b9250506020611b2d85828601611ae5565b9150509250929050565b611b4081611ac6565b82525050565b5f602082019050611b595f830184611b37565b92915050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f611b8882611b5f565b9050919050565b611b9881611b7e565b8114611ba2575f5ffd5b50565b5f81359050611bb381611b8f565b92915050565b5f60208284031215611bce57611bcd611ac2565b5b5f611bdb84828501611ba5565b91505092915050565b611bed81611b7e565b82525050565b5f602082019050611c065f830184611be4565b92915050565b5f5f5f60608486031215611c2357611c22611ac2565b5b5f611c3086828701611ba5565b9350506020611c4186828701611ba5565b9250506040611c5286828701611ae5565b9150509250925092565b5f604082019050611c6f5f830185611b37565b611c7c6020830184611b37565b9392505050565b5f5f60408385031215611c9957611c98611ac2565b5b5f611ca685828601611ba5565b9250506020611cb785828601611ba5565b9150509250929050565b5f5f5f60608486031215611cd857611cd7611ac2565b5b5f611ce586828701611ba5565b9350506020611cf686828701611ae5565b9250506040611d0786828701611ae5565b9150509250925092565b5f5f5f60608486031215611d2857611d27611ac2565b5b5f611d3586828701611ae5565b9350506020611d4686828701611ba5565b9250506040611d5786828701611ba5565b9150509250925092565b5f819050919050565b5f611d84611d7f611d7a84611b5f565b611d61565b611b5f565b9050919050565b5f611d9582611d6a565b9050919050565b5f611da682611d8b565b9050919050565b611db681611d9c565b82525050565b5f602082019050611dcf5f830184611dad565b92915050565b5f5f5f5f60808587031215611ded57611dec611ac2565b5b5f611dfa87828801611ba5565b9450506020611e0b87828801611ae5565b9350506040611e1c87828801611ba5565b9250506060611e2d87828801611ba5565b91505092959194509250565b5f5f60408385031215611e4f57611e4e611ac2565b5b5f611e5c85828601611ba5565b9250506020611e6d85828601611ae5565b9150509250929050565b5f81519050919050565b5f82825260208201905092915050565b5f819050602082019050919050565b611ea981611b7e565b82525050565b5f611eba8383611ea0565b60208301905092915050565b5f602082019050919050565b5f611edc82611e77565b611ee68185611e81565b9350611ef183611e91565b805f5b83811015611f21578151611f088882611eaf565b9750611f1383611ec6565b925050600181019050611ef4565b5085935050505092915050565b5f6020820190508181035f830152611f468184611ed2565b905092915050565b5f60208284031215611f6357611f62611ac2565b5b5f611f7084828501611ae5565b91505092915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f611fb082611ac6565b9150611fbb83611ac6565b9250828202611fc981611ac6565b91508282048414831517611fe057611fdf611f79565b5b5092915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601260045260245ffd5b5f61201e82611ac6565b915061202983611ac6565b92508261203957612038611fe7565b5b828204905092915050565b5f61204e82611ac6565b915061205983611ac6565b925082820190508082111561207157612070611f79565b5b92915050565b5f61208182611ac6565b915061208c83611ac6565b92508282039050818111156120a4576120a3611f79565b5b92915050565b5f6060820190506120bd5f830186611be4565b6120ca6020830185611be4565b6120d76040830184611b37565b949350505050565b5f8115159050919050565b6120f3816120df565b81146120fd575f5ffd5b50565b5f8151905061210e816120ea565b92915050565b5f6020828403121561212957612128611ac2565b5b5f61213684828501612100565b91505092915050565b5f6040820190506121525f830185611be4565b61215f6020830184611b37565b9392505050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b5f69ffffffffffffffffffff82169050919050565b6121b181612193565b81146121bb575f5ffd5b50565b5f815190506121cc816121a8565b92915050565b5f819050919050565b6121e4816121d2565b81146121ee575f5ffd5b50565b5f815190506121ff816121db565b92915050565b5f8151905061221381611acf565b92915050565b5f5f5f5f5f60a0868803121561223257612231611ac2565b5b5f61223f888289016121be565b9550506020612250888289016121f1565b945050604061226188828901612205565b935050606061227288828901612205565b9250506080612283888289016121be565b9150509295509295909350565b5f82825260208201905092915050565b7f496e76616c6964207072696365000000000000000000000000000000000000005f82015250565b5f6122d4600d83612290565b91506122df826122a0565b602082019050919050565b5f6020820190508181035f830152612301816122c8565b9050919050565b5f61231282611d8b565b9050919050565b61232281612308565b82525050565b5f60208201905061233b5f830184612319565b9291505056fea26469706673582212203c7e73cfba0e936ecb09f98603ba7912d366f6781ce76dde51322127ecfb9fc464736f6c634300081e0033",
+        "sourceMap": "498:14184:28:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;13469:223;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;13924:139;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;8370:869;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;1545:35;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;9873:333;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;;14410:176;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;13048:415;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;14294:110;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;4274:268;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;11895:252;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;1747:63;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;13816:102;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;7804:384;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;2343:46;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;12153:635;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;9460:280;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;12794:248;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;;10302:430;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;14187:101;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;6244:481;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;1934:103;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;4718:1025;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;10860:484;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;14069:112;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;11420:416;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;6891:561;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;2111:67;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;2228:35;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;14592:88;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;5814:371;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;7517:182;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;13698:112;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;13469:223;13598:7;13624:61;13647:15;13664:20;13624:22;:61::i;:::-;13617:68;;13469:223;;;;:::o;13924:139::-;14011:7;14037:12;:19;14050:5;14037:19;;;;;;;;;;;;;;;;;;;;;;;;;14030:26;;13924:139;;;:::o;8370:869::-;1263:4;8511:19;8525:4;8511:13;:19::i;:::-;:31;8503:68;;;;;;;;;;;;;;;;;8581:34;8618:92;8653:22;8689:11;8618:21;:92::i;:::-;8581:129;;8720:23;1405:3;1459:2;8747:26;:58;;;;:::i;:::-;8746:84;;;;:::i;:::-;8720:110;;8840:31;8915:15;8874:26;:56;;;;:::i;:::-;8840:90;;8940:142;8971:22;9007:23;9044:4;9062:10;8940:17;:142::i;:::-;9092:39;9101:11;9114:4;9120:10;9092:8;:39::i;:::-;9141:35;9171:4;9141:29;:35::i;:::-;9208:10;9191:41;;9202:4;9191:41;;;9220:11;9191:41;;;;;;:::i;:::-;;;;;;;;8493:746;;;8370:869;;;:::o;1545:35::-;;;;:::o;9873:333::-;9978:22;10002:28;10063:11;:17;10075:4;10063:17;;;;;;;;;;;;;;;;10046:34;;10113:31;10139:4;10113:25;:31::i;:::-;10090:54;;9873:333;;;:::o;14410:176::-;14518:7;14544:22;:28;14567:4;14544:28;;;;;;;;;;;;;;;:35;14573:5;14544:35;;;;;;;;;;;;;;;;14537:42;;14410:176;;;;:::o;13048:415::-;13177:7;13218:1;13200:14;:19;13196:49;;13228:17;13221:24;;;;13196:49;13255:38;1405:3;1322:2;13297:20;:56;;;;:::i;:::-;13296:82;;;;:::i;:::-;13255:123;;13442:14;1263:4;13396:30;:42;;;;:::i;:::-;13395:61;;;;:::i;:::-;13388:68;;;13048:415;;;;;:::o;14294:110::-;14350:7;1322:2;14369:28;;14294:110;:::o;4274:268::-;4442:59;4460:22;4484:16;4442:17;:59::i;:::-;4511:24;4519:15;4511:7;:24::i;:::-;4274:268;;;:::o;11895:252::-;11965:24;11992:19;12006:4;11992:13;:19::i;:::-;11965:46;;1263:4;12042:16;:29;;12113:16;12021:119;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;11955:192;11895:252;:::o;1747:63::-;;;;;;;;;;;;;;;;;;;;;;:::o;13816:102::-;13868:7;1459:2;13887:24;;13816:102;:::o;7804:384::-;7925:6;3178:1;3169:6;:10;3161:56;;;;;;;;;;;;;;;;;7970:6:::1;7943:11;:23;7955:10;7943:23;;;;;;;;;;;;;;;;:33;;;;;;;:::i;:::-;;;;;;;;7986:12;8001:5;:18;;;8020:7;8037:4;8044:6;8001:50;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;7986:65;;8069:7;8061:48;;;;;;;;;;;;;;;;;8119:5;:10;;;8130:6;8119:18;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8162:10;8152:29;;;8174:6;8152:29;;;;;;:::i;:::-;;;;;;;;7933:255;7804:384:::0;;;;:::o;2343:46::-;;;:::o;12153:635::-;12322:16;3178:1;3169:6;:10;3161:56;;;;;;;;;;;;;;;;;12428:16:::1;12350:22;:28;12373:4;12350:28;;;;;;;;;;;;;;;:74;12392:22;12350:74;;;;;;;;;;;;;;;;:94;;;;;;;:::i;:::-;;;;;;;;12484:22;12459:66;;12478:4;12459:66;;;12508:16;12459:66;;;;;;:::i;:::-;;;;;;;;12568:12;12590:22;12583:39;;;12636:2;12652:16;12583:95;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;12568:110;;12696:7;12688:48;;;;;;;;;;;;;;;;;12746:35;12776:4;12746:29;:35::i;:::-;12340:448;12153:635:::0;;;;;:::o;9460:280::-;9518:7;9551:22;9587:28;9628;9651:4;9628:22;:28::i;:::-;9537:119;;;;9673:60;9696:14;9712:20;9673:22;:60::i;:::-;9666:67;;;;9460:280;;;:::o;12794:248::-;12898:22;12922:28;13007;13030:4;13007:22;:28::i;:::-;12966:69;;;;;;;;12794:248;;;:::o;10302:430::-;10386:33;10436:9;10448:1;10436:13;;10431:253;10455:18;:25;;;;10451:1;:29;10431:253;;;10501:13;10517:18;10536:1;10517:21;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;10501:37;;10552:14;10569:22;:28;10592:4;10569:28;;;;;;;;;;;;;;;:35;10598:5;10569:35;;;;;;;;;;;;;;;;10552:52;;10647:26;10659:5;10666:6;10647:11;:26::i;:::-;10618:55;;;;;:::i;:::-;;;10487:197;;10482:3;;;;;;;10431:253;;;;10302:430;;;:::o;14187:101::-;14238:7;1535:4;14257:24;;14187:101;:::o;6244:481::-;6370:16;3178:1;3169:6;:10;3161:56;;;;;;;;;;;;;;;;;3023:21:24::1;:19;:21::i;:::-;6411:141:28::2;6442:22;6478:16;6508:10;6532;6411:17;:141::i;:::-;6562:20;6585:87;6610:22;6646:16;6585:11;:87::i;:::-;6562:110;;6706:12;6682:20;;:36;;;;;;;:::i;:::-;;;;;;;;6401:324;3065:20:24::1;:18;:20::i;:::-;6244:481:28::0;;;:::o;1934:103::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;4718:1025::-;4863:22;3329:1;3298:33;;:12;:19;3311:5;3298:19;;;;;;;;;;;;;;;;;;;;;;;;;:33;;;3290:71;;;;;;;;;;;;;;;;;4908:16:::1;3178:1;3169:6;:10;3161:56;;;;;;;;;;;;;;;;;3023:21:24::2;:19;:21::i;:::-;5087:16:28::3;5003:22;:34;5026:10;5003:34;;;;;;;;;;;;;;;:80;5051:22;5003:80;;;;;;;;;;;;;;;;:100;;;;;;;:::i;:::-;;;;;;;;5223:22;5166:119;;5199:10;5166:119;;;5259:16;5166:119;;;;;;:::i;:::-;;;;;;;;5367:12;5389:22;5382:43;;;5439:10;5471:4;5490:16;5382:134;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;5367:149;;5526:18;5547:87;5572:22;5608:16;5547:11;:87::i;:::-;5526:108;;5668:10;5644:20;;:34;;;;;;;:::i;:::-;;;;;;;;5696:7;5688:48;;;;;;;;;;;;;;;;;4951:792;;3065:20:24::2;:18;:20::i;:::-;3371:1:28::1;4718:1025:::0;;;:::o;10860:484::-;10987:7;11006:31;11075:12;:36;11088:22;11075:36;;;;;;;;;;;;;;;;;;;;;;;;;11006:115;;11134:12;11156:9;:25;;;:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;11131:52;;;;;;11209:1;11201:5;:9;11193:35;;;;;;;;;;;;:::i;:::-;;;;;;;;;1216:4;11306:5;11298:38;;;;:::i;:::-;1263:4;11258:11;:23;;;;:::i;:::-;11257:80;;;;:::i;:::-;11238:99;;;;10860:484;;;;:::o;14069:112::-;14121:16;14156:18;14149:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;14069:112;:::o;11420:416::-;11515:7;11534:31;11603:12;:19;11616:5;11603:19;;;;;;;;;;;;;;;;;;;;;;;;;11534:98;;11645:12;11667:9;:35;;;;;;:37;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;11642:62;;;;;;11730:1;11722:5;:9;11714:35;;;;;;;;;;;;:::i;:::-;;;;;;;;;1263:4;11810:6;1216:4;11776:5;11768:38;;;;:::i;:::-;11767:49;;;;:::i;:::-;11766:63;;;;:::i;:::-;11759:70;;;;11420:416;;;;:::o;6891:561::-;6967:15;3178:1;3169:6;:10;3161:56;;;;;;;;;;;;;;;;;3023:21:24::1;:19;:21::i;:::-;7067:15:28::2;7040:11;:23;7052:10;7040:23;;;;;;;;;;;;;;;;:42;;;;;;;:::i;:::-;;;;;;;;7191:41;7221:10;7191:29;:41::i;:::-;7290:11;7304:5;:10;;;7315;7327:15;7304:39;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;7290:53;;7361:6;7353:39;;;;;;;;;;;;;;;;;7417:10;7407:38;;;7429:15;7407:38;;;;;;:::i;:::-;;;;;;;;6997:455;3065:20:24::1;:18;:20::i;:::-;6891:561:28::0;;:::o;2111:67::-;;;;;;;;;;;;;;;;;:::o;2228:35::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;14592:88::-;14633:7;14667:5;14652:21;;14592:88;:::o;5814:371::-;5995:16;3178:1;3169:6;:10;3161:56;;;;;;;;;;;;;;;;;6034:15:::1;3178:1;3169:6;:10;3161:56;;;;;;;;;;;;;;;;;3023:21:24::2;:19;:21::i;:::-;6086:24:28::3;6094:15;6086:7;:24::i;:::-;6120:58;6137:22;6161:16;6120;:58::i;:::-;3065:20:24::2;:18;:20::i;:::-;3227:1:28::1;5814:371:::0;;;;:::o;7517:182::-;7570:6;3178:1;3169:6;:10;3161:56;;;;;;;;;;;;;;;;;3023:21:24::1;:19;:21::i;:::-;7601:40:28::2;7610:6;7618:10;7630;7601:8;:40::i;:::-;7651:41;7681:10;7651:29;:41::i;:::-;3065:20:24::1;:18;:20::i;:::-;7517:182:28::0;;:::o;13698:112::-;13758:7;13784:19;13798:4;13784:13;:19::i;:::-;13777:26;;13698:112;;;:::o;3749:292:24:-;3872:25;:23;:25::i;:::-;2407:1;3972:46;:29;:27;:29::i;:::-;:44;:46::i;:::-;:52;;:62;;;;3749:292::o;4047:253::-;2365:1;4227:46;:29;:27;:29::i;:::-;:44;:46::i;:::-;:52;;:66;;;;4047:253::o;3586:157::-;3648:25;:23;:25::i;:::-;3644:93;;;3696:30;;;;;;;;;;;;;;3644:93;3586:157::o;4636:127::-;4706:7;1505:66;4732:24;;4725:31;;4636:127;:::o;2679:163:25:-;2740:21;2822:4;2812:14;;2679:163;;;:::o;4479:151:24:-;4537:4;2407:1;4560:46;:29;:27;:29::i;:::-;:44;:46::i;:::-;:52;;;:63;4553:70;;4479:151;:::o;88:117:32:-;197:1;194;187:12;334:77;371:7;400:5;389:16;;334:77;;;:::o;417:122::-;490:24;508:5;490:24;:::i;:::-;483:5;480:35;470:63;;529:1;526;519:12;470:63;417:122;:::o;545:139::-;591:5;629:6;616:20;607:29;;645:33;672:5;645:33;:::i;:::-;545:139;;;;:::o;690:474::-;758:6;766;815:2;803:9;794:7;790:23;786:32;783:119;;;821:79;;:::i;:::-;783:119;941:1;966:53;1011:7;1002:6;991:9;987:22;966:53;:::i;:::-;956:63;;912:117;1068:2;1094:53;1139:7;1130:6;1119:9;1115:22;1094:53;:::i;:::-;1084:63;;1039:118;690:474;;;;;:::o;1170:118::-;1257:24;1275:5;1257:24;:::i;:::-;1252:3;1245:37;1170:118;;:::o;1294:222::-;1387:4;1425:2;1414:9;1410:18;1402:26;;1438:71;1506:1;1495:9;1491:17;1482:6;1438:71;:::i;:::-;1294:222;;;;:::o;1522:126::-;1559:7;1599:42;1592:5;1588:54;1577:65;;1522:126;;;:::o;1654:96::-;1691:7;1720:24;1738:5;1720:24;:::i;:::-;1709:35;;1654:96;;;:::o;1756:122::-;1829:24;1847:5;1829:24;:::i;:::-;1822:5;1819:35;1809:63;;1868:1;1865;1858:12;1809:63;1756:122;:::o;1884:139::-;1930:5;1968:6;1955:20;1946:29;;1984:33;2011:5;1984:33;:::i;:::-;1884:139;;;;:::o;2029:329::-;2088:6;2137:2;2125:9;2116:7;2112:23;2108:32;2105:119;;;2143:79;;:::i;:::-;2105:119;2263:1;2288:53;2333:7;2324:6;2313:9;2309:22;2288:53;:::i;:::-;2278:63;;2234:117;2029:329;;;;:::o;2364:118::-;2451:24;2469:5;2451:24;:::i;:::-;2446:3;2439:37;2364:118;;:::o;2488:222::-;2581:4;2619:2;2608:9;2604:18;2596:26;;2632:71;2700:1;2689:9;2685:17;2676:6;2632:71;:::i;:::-;2488:222;;;;:::o;2716:619::-;2793:6;2801;2809;2858:2;2846:9;2837:7;2833:23;2829:32;2826:119;;;2864:79;;:::i;:::-;2826:119;2984:1;3009:53;3054:7;3045:6;3034:9;3030:22;3009:53;:::i;:::-;2999:63;;2955:117;3111:2;3137:53;3182:7;3173:6;3162:9;3158:22;3137:53;:::i;:::-;3127:63;;3082:118;3239:2;3265:53;3310:7;3301:6;3290:9;3286:22;3265:53;:::i;:::-;3255:63;;3210:118;2716:619;;;;;:::o;3341:332::-;3462:4;3500:2;3489:9;3485:18;3477:26;;3513:71;3581:1;3570:9;3566:17;3557:6;3513:71;:::i;:::-;3594:72;3662:2;3651:9;3647:18;3638:6;3594:72;:::i;:::-;3341:332;;;;;:::o;3679:474::-;3747:6;3755;3804:2;3792:9;3783:7;3779:23;3775:32;3772:119;;;3810:79;;:::i;:::-;3772:119;3930:1;3955:53;4000:7;3991:6;3980:9;3976:22;3955:53;:::i;:::-;3945:63;;3901:117;4057:2;4083:53;4128:7;4119:6;4108:9;4104:22;4083:53;:::i;:::-;4073:63;;4028:118;3679:474;;;;;:::o;4159:619::-;4236:6;4244;4252;4301:2;4289:9;4280:7;4276:23;4272:32;4269:119;;;4307:79;;:::i;:::-;4269:119;4427:1;4452:53;4497:7;4488:6;4477:9;4473:22;4452:53;:::i;:::-;4442:63;;4398:117;4554:2;4580:53;4625:7;4616:6;4605:9;4601:22;4580:53;:::i;:::-;4570:63;;4525:118;4682:2;4708:53;4753:7;4744:6;4733:9;4729:22;4708:53;:::i;:::-;4698:63;;4653:118;4159:619;;;;;:::o;4784:::-;4861:6;4869;4877;4926:2;4914:9;4905:7;4901:23;4897:32;4894:119;;;4932:79;;:::i;:::-;4894:119;5052:1;5077:53;5122:7;5113:6;5102:9;5098:22;5077:53;:::i;:::-;5067:63;;5023:117;5179:2;5205:53;5250:7;5241:6;5230:9;5226:22;5205:53;:::i;:::-;5195:63;;5150:118;5307:2;5333:53;5378:7;5369:6;5358:9;5354:22;5333:53;:::i;:::-;5323:63;;5278:118;4784:619;;;;;:::o;5409:60::-;5437:3;5458:5;5451:12;;5409:60;;;:::o;5475:142::-;5525:9;5558:53;5576:34;5585:24;5603:5;5585:24;:::i;:::-;5576:34;:::i;:::-;5558:53;:::i;:::-;5545:66;;5475:142;;;:::o;5623:126::-;5673:9;5706:37;5737:5;5706:37;:::i;:::-;5693:50;;5623:126;;;:::o;5755:159::-;5838:9;5871:37;5902:5;5871:37;:::i;:::-;5858:50;;5755:159;;;:::o;5920:197::-;6040:70;6104:5;6040:70;:::i;:::-;6035:3;6028:83;5920:197;;:::o;6123:288::-;6249:4;6287:2;6276:9;6272:18;6264:26;;6300:104;6401:1;6390:9;6386:17;6377:6;6300:104;:::i;:::-;6123:288;;;;:::o;6417:765::-;6503:6;6511;6519;6527;6576:3;6564:9;6555:7;6551:23;6547:33;6544:120;;;6583:79;;:::i;:::-;6544:120;6703:1;6728:53;6773:7;6764:6;6753:9;6749:22;6728:53;:::i;:::-;6718:63;;6674:117;6830:2;6856:53;6901:7;6892:6;6881:9;6877:22;6856:53;:::i;:::-;6846:63;;6801:118;6958:2;6984:53;7029:7;7020:6;7009:9;7005:22;6984:53;:::i;:::-;6974:63;;6929:118;7086:2;7112:53;7157:7;7148:6;7137:9;7133:22;7112:53;:::i;:::-;7102:63;;7057:118;6417:765;;;;;;;:::o;7188:474::-;7256:6;7264;7313:2;7301:9;7292:7;7288:23;7284:32;7281:119;;;7319:79;;:::i;:::-;7281:119;7439:1;7464:53;7509:7;7500:6;7489:9;7485:22;7464:53;:::i;:::-;7454:63;;7410:117;7566:2;7592:53;7637:7;7628:6;7617:9;7613:22;7592:53;:::i;:::-;7582:63;;7537:118;7188:474;;;;;:::o;7668:114::-;7735:6;7769:5;7763:12;7753:22;;7668:114;;;:::o;7788:184::-;7887:11;7921:6;7916:3;7909:19;7961:4;7956:3;7952:14;7937:29;;7788:184;;;;:::o;7978:132::-;8045:4;8068:3;8060:11;;8098:4;8093:3;8089:14;8081:22;;7978:132;;;:::o;8116:108::-;8193:24;8211:5;8193:24;:::i;:::-;8188:3;8181:37;8116:108;;:::o;8230:179::-;8299:10;8320:46;8362:3;8354:6;8320:46;:::i;:::-;8398:4;8393:3;8389:14;8375:28;;8230:179;;;;:::o;8415:113::-;8485:4;8517;8512:3;8508:14;8500:22;;8415:113;;;:::o;8564:732::-;8683:3;8712:54;8760:5;8712:54;:::i;:::-;8782:86;8861:6;8856:3;8782:86;:::i;:::-;8775:93;;8892:56;8942:5;8892:56;:::i;:::-;8971:7;9002:1;8987:284;9012:6;9009:1;9006:13;8987:284;;;9088:6;9082:13;9115:63;9174:3;9159:13;9115:63;:::i;:::-;9108:70;;9201:60;9254:6;9201:60;:::i;:::-;9191:70;;9047:224;9034:1;9031;9027:9;9022:14;;8987:284;;;8991:14;9287:3;9280:10;;8688:608;;;8564:732;;;;:::o;9302:373::-;9445:4;9483:2;9472:9;9468:18;9460:26;;9532:9;9526:4;9522:20;9518:1;9507:9;9503:17;9496:47;9560:108;9663:4;9654:6;9560:108;:::i;:::-;9552:116;;9302:373;;;;:::o;9681:329::-;9740:6;9789:2;9777:9;9768:7;9764:23;9760:32;9757:119;;;9795:79;;:::i;:::-;9757:119;9915:1;9940:53;9985:7;9976:6;9965:9;9961:22;9940:53;:::i;:::-;9930:63;;9886:117;9681:329;;;;:::o;10016:180::-;10064:77;10061:1;10054:88;10161:4;10158:1;10151:15;10185:4;10182:1;10175:15;10202:410;10242:7;10265:20;10283:1;10265:20;:::i;:::-;10260:25;;10299:20;10317:1;10299:20;:::i;:::-;10294:25;;10354:1;10351;10347:9;10376:30;10394:11;10376:30;:::i;:::-;10365:41;;10555:1;10546:7;10542:15;10539:1;10536:22;10516:1;10509:9;10489:83;10466:139;;10585:18;;:::i;:::-;10466:139;10250:362;10202:410;;;;:::o;10618:180::-;10666:77;10663:1;10656:88;10763:4;10760:1;10753:15;10787:4;10784:1;10777:15;10804:185;10844:1;10861:20;10879:1;10861:20;:::i;:::-;10856:25;;10895:20;10913:1;10895:20;:::i;:::-;10890:25;;10934:1;10924:35;;10939:18;;:::i;:::-;10924:35;10981:1;10978;10974:9;10969:14;;10804:185;;;;:::o;10995:191::-;11035:3;11054:20;11072:1;11054:20;:::i;:::-;11049:25;;11088:20;11106:1;11088:20;:::i;:::-;11083:25;;11131:1;11128;11124:9;11117:16;;11152:3;11149:1;11146:10;11143:36;;;11159:18;;:::i;:::-;11143:36;10995:191;;;;:::o;11192:194::-;11232:4;11252:20;11270:1;11252:20;:::i;:::-;11247:25;;11286:20;11304:1;11286:20;:::i;:::-;11281:25;;11330:1;11327;11323:9;11315:17;;11354:1;11348:4;11345:11;11342:37;;;11359:18;;:::i;:::-;11342:37;11192:194;;;;:::o;11392:442::-;11541:4;11579:2;11568:9;11564:18;11556:26;;11592:71;11660:1;11649:9;11645:17;11636:6;11592:71;:::i;:::-;11673:72;11741:2;11730:9;11726:18;11717:6;11673:72;:::i;:::-;11755;11823:2;11812:9;11808:18;11799:6;11755:72;:::i;:::-;11392:442;;;;;;:::o;11840:90::-;11874:7;11917:5;11910:13;11903:21;11892:32;;11840:90;;;:::o;11936:116::-;12006:21;12021:5;12006:21;:::i;:::-;11999:5;11996:32;11986:60;;12042:1;12039;12032:12;11986:60;11936:116;:::o;12058:137::-;12112:5;12143:6;12137:13;12128:22;;12159:30;12183:5;12159:30;:::i;:::-;12058:137;;;;:::o;12201:345::-;12268:6;12317:2;12305:9;12296:7;12292:23;12288:32;12285:119;;;12323:79;;:::i;:::-;12285:119;12443:1;12468:61;12521:7;12512:6;12501:9;12497:22;12468:61;:::i;:::-;12458:71;;12414:125;12201:345;;;;:::o;12552:332::-;12673:4;12711:2;12700:9;12696:18;12688:26;;12724:71;12792:1;12781:9;12777:17;12768:6;12724:71;:::i;:::-;12805:72;12873:2;12862:9;12858:18;12849:6;12805:72;:::i;:::-;12552:332;;;;;:::o;12890:180::-;12938:77;12935:1;12928:88;13035:4;13032:1;13025:15;13059:4;13056:1;13049:15;13076:105;13112:7;13152:22;13145:5;13141:34;13130:45;;13076:105;;;:::o;13187:120::-;13259:23;13276:5;13259:23;:::i;:::-;13252:5;13249:34;13239:62;;13297:1;13294;13287:12;13239:62;13187:120;:::o;13313:141::-;13369:5;13400:6;13394:13;13385:22;;13416:32;13442:5;13416:32;:::i;:::-;13313:141;;;;:::o;13460:76::-;13496:7;13525:5;13514:16;;13460:76;;;:::o;13542:120::-;13614:23;13631:5;13614:23;:::i;:::-;13607:5;13604:34;13594:62;;13652:1;13649;13642:12;13594:62;13542:120;:::o;13668:141::-;13724:5;13755:6;13749:13;13740:22;;13771:32;13797:5;13771:32;:::i;:::-;13668:141;;;;:::o;13815:143::-;13872:5;13903:6;13897:13;13888:22;;13919:33;13946:5;13919:33;:::i;:::-;13815:143;;;;:::o;13964:971::-;14067:6;14075;14083;14091;14099;14148:3;14136:9;14127:7;14123:23;14119:33;14116:120;;;14155:79;;:::i;:::-;14116:120;14275:1;14300:63;14355:7;14346:6;14335:9;14331:22;14300:63;:::i;:::-;14290:73;;14246:127;14412:2;14438:63;14493:7;14484:6;14473:9;14469:22;14438:63;:::i;:::-;14428:73;;14383:128;14550:2;14576:64;14632:7;14623:6;14612:9;14608:22;14576:64;:::i;:::-;14566:74;;14521:129;14689:2;14715:64;14771:7;14762:6;14751:9;14747:22;14715:64;:::i;:::-;14705:74;;14660:129;14828:3;14855:63;14910:7;14901:6;14890:9;14886:22;14855:63;:::i;:::-;14845:73;;14799:129;13964:971;;;;;;;;:::o;14941:169::-;15025:11;15059:6;15054:3;15047:19;15099:4;15094:3;15090:14;15075:29;;14941:169;;;;:::o;15116:163::-;15256:15;15252:1;15244:6;15240:14;15233:39;15116:163;:::o;15285:366::-;15427:3;15448:67;15512:2;15507:3;15448:67;:::i;:::-;15441:74;;15524:93;15613:3;15524:93;:::i;:::-;15642:2;15637:3;15633:12;15626:19;;15285:366;;;:::o;15657:419::-;15823:4;15861:2;15850:9;15846:18;15838:26;;15910:9;15904:4;15900:20;15896:1;15885:9;15881:17;15874:47;15938:131;16064:4;15938:131;:::i;:::-;15930:139;;15657:419;;;:::o;16082:154::-;16160:9;16193:37;16224:5;16193:37;:::i;:::-;16180:50;;16082:154;;;:::o;16242:195::-;16365:65;16424:5;16365:65;:::i;:::-;16360:3;16353:78;16242:195;;:::o;16443:294::-;16572:4;16610:2;16599:9;16595:18;16587:26;;16623:107;16727:1;16716:9;16712:17;16703:6;16623:107;:::i;:::-;16443:294;;;;:::o",
+        "linkReferences": {
+            "src/libraries/OracleLib.sol": {
+                "OracleLib": [
+                    {
+                        "start": 5547,
+                        "length": 20
+                    }
+                ]
+            }
+        },
+        "immutableReferences": {
+            "37834": [
+                {
+                    "start": 2761,
+                    "length": 32
+                },
+                {
+                    "start": 2975,
+                    "length": 32
+                },
+                {
+                    "start": 3194,
+                    "length": 32
+                },
+                {
+                    "start": 5954,
+                    "length": 32
+                },
+                {
+                    "start": 6338,
+                    "length": 32
+                }
+            ]
+        }
+    },
+    "methodIdentifiers": {
+        "_burnDsc(uint256,address,address)": "59fc9583",
+        "_calculateHealthFactor(uint256,uint256)": "347ecc91",
+        "_getAccountInformation(address)": "2af8533d",
+        "_healthFactor(address)": "6ecd725c",
+        "_redeemCollateral(address,uint256,address,address)": "5e37f988",
+        "_revertIfHealthFactorIsBroken(address)": "507898f0",
+        "burnDsc(uint256)": "f6876608",
+        "calculateHealthFactor(uint256,uint256)": "01f72884",
+        "depositCollateral(address,uint256)": "a5d5db0c",
+        "depostitCollateralAndMintDsc(address,uint256,uint256)": "4e57f3c6",
+        "getAccountCollateralValue(address)": "7d1a4450",
+        "getAccountInformation(address)": "7be564fc",
+        "getCollateralBalanceOfUser(address,address)": "31e92b83",
+        "getCollateralTokenPriceFeed(address)": "1c08adda",
+        "getCollateralTokens()": "b58eb63f",
+        "getDsc()": "deb8e018",
+        "getHealthFactor(address)": "fe6bcd7c",
+        "getLiquidationBonus()": "59aa9e72",
+        "getLiquidationThreshold()": "4ae9b8bc",
+        "getMinHealthFactor()": "8c1ae6c8",
+        "getTokenAmountFromUsd(address,uint256)": "afea2e48",
+        "getUsdValue(address,uint256)": "c660d112",
+        "i_dsc()": "5e338bb3",
+        "liquidate(address,address,uint256)": "26c01303",
+        "mintDsc(uint256)": "c9b7c327",
+        "redeemCollateral(address,uint256)": "9acd81b3",
+        "redeemCollateralForDsc(address,uint256,uint256)": "f419ea9c",
+        "s_DSCMinted(address)": "d1391377",
+        "s_collateralDepositsed(address,address)": "9dae3b92",
+        "s_collateralTokens(uint256)": "d63f8e59",
+        "s_priceFeeds(address)": "59451b6d",
+        "totalCollateralValue()": "2a6739a2"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"tokenAddresses\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"priceFeedAddresses\",\"type\":\"address[]\"},{\"internalType\":\"address\",\"name\":\"dscAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"healthFactor\",\"type\":\"uint256\"}],\"name\":\"DSCEngine_BreakHealthFactor\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DSCEngine_HealthFactorOk\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DSCEngine_MintFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DSCEngine_NeedsMoreThanZeroAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DSCEngine_NotAllowedToken\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DSCEngine_TokenAddressesAndPriceFeedAddressesMustMatchSameLength\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DSCEngine_TransferFromFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"CollateralDeposited\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"CollateralRedeemed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"DscBurned\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"DscMinted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"repayer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Liquidated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"onBehalfOf\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"dscFrom\",\"type\":\"address\"}],\"name\":\"_burnDsc\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"totalDscMinted\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralValueInUsd\",\"type\":\"uint256\"}],\"name\":\"_calculateHealthFactor\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"_getAccountInformation\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalDscMinted\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralValueInUsd\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"_healthFactor\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenCollateralAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountCollateral\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"_redeemCollateral\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"_revertIfHealthFactorIsBroken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burnDsc\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"totallDscMinted\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralValueInUsd\",\"type\":\"uint256\"}],\"name\":\"calculateHealthFactor\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenCollateralAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountCollateral\",\"type\":\"uint256\"}],\"name\":\"depositCollateral\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenCollateralAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountCollateral\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountDscToMint\",\"type\":\"uint256\"}],\"name\":\"depostitCollateralAndMintDsc\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getAccountCollateralValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalCollateralValueInUsd\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getAccountInformation\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalDscMinted\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"collateralValueInUsd\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"getCollateralBalanceOfUser\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"getCollateralTokenPriceFeed\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCollateralTokens\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getDsc\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"getHealthFactor\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLiquidationBonus\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLiquidationThreshold\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getMinHealthFactor\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenCollateralAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"debtToCover\",\"type\":\"uint256\"}],\"name\":\"getTokenAmountFromUsd\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"getUsdValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"i_dsc\",\"outputs\":[{\"internalType\":\"contract DecentralizedStableCoin\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenCollateralAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"debtToCover\",\"type\":\"uint256\"}],\"name\":\"liquidate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amountDscToMint\",\"type\":\"uint256\"}],\"name\":\"mintDsc\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenCollateralAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountCollateral\",\"type\":\"uint256\"}],\"name\":\"redeemCollateral\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenCollateralAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountCollateral\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountDscToBurn\",\"type\":\"uint256\"}],\"name\":\"redeemCollateralForDsc\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"s_DSCMinted\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountDscMinted\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"s_collateralDepositsed\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"s_collateralTokens\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"s_priceFeeds\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"priceFeed\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalCollateralValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"@author\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"_getAccountInformation(address)\":{\"notice\":\"\\u83b7\\u53d6\\u7528\\u6237\\u8d26\\u6237\\u4fe1\\u606f \\u524d\\u7aef\\u5e38\\u7528\\uff1a\\u5c55\\u793a\\u7528\\u6237\\u501f\\u4e86\\u591a\\u5c11\\u94b1\\uff0c\\u62b5\\u62bc\\u4e86\\u591a\\u5c11\\u94b1\"},\"_healthFactor(address)\":{\"notice\":\"\\u8ba1\\u7b97\\u5065\\u5eb7\\u56e0\\u5b50\\uff1a\\u6570\\u503c\\u8d8a\\u5927\\u8d8a\\u5b89\\u5168\\uff0c\\u4f4e\\u4e8e 1 \\u5c31\\u4f1a\\u88ab\\u6e05\\u7b97\"},\"burnDsc(uint256)\":{\"notice\":\"\\u9500\\u6bc1\\u7a33\\u5b9a\\u5e01\\uff08\\u8fd8\\u94b1\\uff09\"},\"depositCollateral(address,uint256)\":{\"notice\":\"\\u5355\\u72ec\\u5b58\\u5165\\u62b5\\u62bc\\u54c1 \\u6ce8\\u610f\\uff1a\\u524d\\u7aef\\u5728\\u8c03\\u7528\\u6b64\\u51fd\\u6570\\u524d\\uff0c\\u9700\\u8981\\u5148\\u5728 ERC20 \\u4ee3\\u5e01\\u5408\\u7ea6\\u4e0a\\u8c03\\u7528 approve \\u6388\\u6743\\u6b64\\u5408\\u7ea6\\u6263\\u6b3e\"},\"depostitCollateralAndMintDsc(address,uint256,uint256)\":{\"notice\":\"\\u5b58\\u5165\\u62b5\\u62bc\\u54c1\\u5e76\\u94f8\\u9020\\u7a33\\u5b9a\\u5e01\\uff08\\u4e00\\u6b65\\u5230\\u4f4d\\uff09 \\u524d\\u7aef\\u8c03\\u7528\\uff1a\\u7528\\u6237\\u8f93\\u5165\\u62b5\\u62bc\\u91d1\\u989d\\u548c\\u60f3\\u8981\\u501f\\u51fa\\u7684 DSC \\u91d1\\u989d\"},\"getAccountCollateralValue(address)\":{\"notice\":\"\\u8ba1\\u7b97\\u7528\\u6237\\u6240\\u6709\\u62b5\\u62bc\\u54c1\\u7684\\u603b\\u4ef7\\u503c\\uff08\\u6298\\u7b97\\u4e3a USD\\uff09\"},\"getTokenAmountFromUsd(address,uint256)\":{\"notice\":\"\\u5c06 USD \\u91d1\\u989d\\u8f6c\\u6362\\u4e3a\\u5bf9\\u5e94\\u7684\\u4ee3\\u5e01\\u6570\\u91cf\\uff08\\u5982\\uff1a100 \\u7f8e\\u5143\\u7b49\\u4e8e\\u591a\\u5c11\\u4e2a\\u4ee5\\u592a\\u574a\\uff09\"},\"getUsdValue(address,uint256)\":{\"notice\":\"\\u83b7\\u53d6\\u7279\\u5b9a\\u4ee3\\u5e01\\u91d1\\u989d\\u7684 USD \\u4ef7\\u503c\"},\"liquidate(address,address,uint256)\":{\"notice\":\"\\u6e05\\u7b97\\u903b\\u8f91 \\u5982\\u679c\\u4e00\\u4e2a\\u7528\\u6237\\u7684\\u5065\\u5eb7\\u56e0\\u5b50\\u8dcc\\u7834 1\\uff0c\\u4efb\\u4f55\\u4eba\\u90fd\\u53ef\\u4ee5\\u5e2e\\u4ed6\\u8fd8\\u503a\\uff0c\\u5e76\\u62ff\\u8d70\\u4ed6\\u7684\\u62b5\\u62bc\\u54c1\\uff08\\u5916\\u52a0 10% \\u5956\\u91d1\\uff09\"},\"mintDsc(uint256)\":{\"notice\":\"\\u94f8\\u9020\\u7a33\\u5b9a\\u5e01\\uff08\\u501f\\u94b1\\uff09 \\u6838\\u5fc3\\uff1a\\u7cfb\\u7edf\\u4f1a\\u68c0\\u67e5\\u4f60\\u7684\\u62b5\\u62bc\\u54c1\\u4ef7\\u503c\\u662f\\u5426\\u8db3\\u591f\\uff0c\\u4e0d\\u591f\\u4f1a\\u76f4\\u63a5\\u62a5\\u9519\\uff08Revert\\uff09\"},\"redeemCollateral(address,uint256)\":{\"notice\":\"\\u53d6\\u56de\\u62b5\\u62bc\\u54c1\\u903b\\u8f91\"},\"redeemCollateralForDsc(address,uint256,uint256)\":{\"notice\":\"\\u9500\\u6bc1\\u7a33\\u5b9a\\u5e01\\u5e76\\u53d6\\u56de\\u62b5\\u62bc\\u54c1\"}},\"notice\":\"@dev\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/DSCEngine.sol\":\"DSCEngine\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[\":@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":chainlink-brownie-contracts/=lib/chainlink-brownie-contracts/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":halmos-cheatcodes/=lib/openzeppelin-contracts/lib/halmos-cheatcodes/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/chainlink-brownie-contracts/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol\":{\"keccak256\":\"0x257a8d28fa83d3d942547c8e129ef465e4b5f3f31171e7be4739a4c98da6b4f0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6d39e11b1dc7b9b8ccdabbc9be442ab7cda4a81c748f57e316dcb1bcb4a28bf9\",\"dweb:/ipfs/QmaG6vz6W6iEUBsbHSBob5mdcitYxWjoygxREHpsJHfWrS\"]},\"lib/openzeppelin-contracts/contracts/access/Ownable.sol\":{\"keccak256\":\"0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6\",\"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a\"]},\"lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x1b88b3fb3d85ba5496d7d5f396f83ee1fddcdd6762059ff65992655b67920998\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://89393bb3212da1c0889601b9706a07b39419ddc4d2faab9eaf6e7f9152cf6a1c\",\"dweb:/ipfs/QmcCfzzxv1Bkdz1c1yF4gQCeYb6Us5BJANnzTFqawfd1HL\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0x669464167428061ee0f8618b73b3ee90aff8405683e7ddde8cd77dadaa1afe29\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0dda78587a7358b4fdf6b9fca0fde5a5e34930f36d5268a16028627fc0170195\",\"dweb:/ipfs/QmQ1b6cCceDRWNxti9HifsTCzmVP25Haxs1bWugm52vTqH\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x74ed01eb66b923d0d0cfe3be84604ac04b76482a55f9dd655e1ef4d367f95bc2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5282825a626cfe924e504274b864a652b0023591fa66f06a067b25b51ba9b303\",\"dweb:/ipfs/QmeCfPykghhMc81VJTrHTC7sF6CRvaA1FXVq2pJhwYp1dV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Burnable.sol\":{\"keccak256\":\"0x2659248df25e34000ed214b3dc8da2160bc39874c992b477d9e2b1b3283dc073\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c345af1b0e7ea28d1216d6a04ab28f5534a5229b9edf9ca3cd0e84950ae58d26\",\"dweb:/ipfs/QmY63jtSrYpLRe8Gj1ep2vMDCKxGNNG3hnNVKBVnrs2nmA\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xd6fa4088198f04eef10c5bce8a2f4d60554b7ec4b987f684393c01bf79b94d9f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f95ee0bbd4dd3ac730d066ba3e785ded4565e890dbec2fa7d3b9fe3bad9d0d6e\",\"dweb:/ipfs/QmSLr6bHkPFWT7ntj34jmwfyskpwo97T9jZUrk5sz3sdtR\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xa516cbf1c7d15d3517c2d668601ce016c54395bf5171918a14e2686977465f53\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1e1d079e8edfb58efd23a311e315a4807b01b5d1cf153f8fa2d0608b9dec3e99\",\"dweb:/ipfs/QmTBExeX2SDTkn5xbk5ssbYSx7VqRp9H4Ux1CY4uQM4b9N\"]},\"lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol\":{\"keccak256\":\"0xcf74f855663ce2ae00ed8352666b7935f6cddea2932fdf2c3ecd30a9b1cd0e97\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9f660b1f351b757dfe01438e59888f31f33ded3afcf5cb5b0d9bf9aa6f320a8b\",\"dweb:/ipfs/QmarDJ5hZEgBtCmmrVzEZWjub9769eD686jmzb2XpSU1cM\"]},\"src/DSCEngine.sol\":{\"keccak256\":\"0xa3aed281c18c5af85baeb02c00a50e3791d87ac7b8fa48d4be0de3664f4ccff7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b45e29dafceb00d7a102216a62aca996d92a27f5cb53d4632a1d5ab6bc7aed78\",\"dweb:/ipfs/QmYb4kPmRJoXEo7DR9YmfhFBAKERVdNpYPmRoT1oesJKRq\"]},\"src/DecentralizedStableCoin.sol\":{\"keccak256\":\"0xfdb156bb5e194f48509e350d5012020ae1872647e050043375b047df42272235\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce3ef3cc61733e7f89f4aae6d09762dae8a7dfb04385152c8e190df69714c0cc\",\"dweb:/ipfs/QmTXXUeAQXNeZu5pWJh5GH7dVKaqMKvLYAaHeL5dhYhPqf\"]},\"src/libraries/OracleLib.sol\":{\"keccak256\":\"0xb7bc90ac13c39e6cbdc39ed2ebffad18987e552120061b71f87c799babd3b1b6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6d2d3fc8b555172fac5c0827e2fd0fcc89ffffa5e0e7461a7af7100058874505\",\"dweb:/ipfs/QmStpeGFBSsBspUfkBzTTwUwhPtqWh2nmzVZjwsBE713f2\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.30+commit.73712a01"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address[]",
+                            "name": "tokenAddresses",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "priceFeedAddresses",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "dscAddress",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "healthFactor",
+                            "type": "uint256"
+                        }
+                    ],
+                    "type": "error",
+                    "name": "DSCEngine_BreakHealthFactor"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "DSCEngine_HealthFactorOk"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "DSCEngine_MintFailed"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "DSCEngine_NeedsMoreThanZeroAmount"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "DSCEngine_NotAllowedToken"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "DSCEngine_TokenAddressesAndPriceFeedAddressesMustMatchSameLength"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "DSCEngine_TransferFromFailed"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "ReentrancyGuardReentrantCall"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "CollateralDeposited",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "CollateralRedeemed",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "DscBurned",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "DscMinted",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "repayer",
+                            "type": "address",
+                            "indexed": true
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256",
+                            "indexed": false
+                        }
+                    ],
+                    "type": "event",
+                    "name": "Liquidated",
+                    "anonymous": false
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "onBehalfOf",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "dscFrom",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "_burnDsc"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "totalDscMinted",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateralValueInUsd",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "_calculateHealthFactor",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "_getAccountInformation",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "totalDscMinted",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateralValueInUsd",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "_healthFactor",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "tokenCollateralAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amountCollateral",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "to",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "_redeemCollateral"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "_revertIfHealthFactorIsBroken"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "burnDsc"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "totallDscMinted",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateralValueInUsd",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "calculateHealthFactor",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "tokenCollateralAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amountCollateral",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "depositCollateral"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "tokenCollateralAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amountCollateral",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amountDscToMint",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "depostitCollateralAndMintDsc"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getAccountCollateralValue",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "totalCollateralValueInUsd",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getAccountInformation",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "totalDscMinted",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateralValueInUsd",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getCollateralBalanceOfUser",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getCollateralTokenPriceFeed",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getCollateralTokens",
+                    "outputs": [
+                        {
+                            "internalType": "address[]",
+                            "name": "",
+                            "type": "address[]"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getDsc",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getHealthFactor",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getLiquidationBonus",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getLiquidationThreshold",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getMinHealthFactor",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "tokenCollateralAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "debtToCover",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getTokenAmountFromUsd",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "getUsdValue",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "i_dsc",
+                    "outputs": [
+                        {
+                            "internalType": "contract DecentralizedStableCoin",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "tokenCollateralAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "debtToCover",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "liquidate"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "amountDscToMint",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "mintDsc"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "tokenCollateralAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amountCollateral",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "redeemCollateral"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "tokenCollateralAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amountCollateral",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amountDscToBurn",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "redeemCollateralForDsc"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "s_DSCMinted",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "amountDscMinted",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "user",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "s_collateralDepositsed",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "s_collateralTokens",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "s_priceFeeds",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "priceFeed",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "totalCollateralValue",
+                    "outputs": [
+                        {
+                            "internalType": "uint256",
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ]
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {},
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {
+                    "_getAccountInformation(address)": {
+                        "notice": "获取用户账户信息 前端常用：展示用户借了多少钱，抵押了多少钱"
+                    },
+                    "_healthFactor(address)": {
+                        "notice": "计算健康因子：数值越大越安全，低于 1 就会被清算"
+                    },
+                    "burnDsc(uint256)": {
+                        "notice": "销毁稳定币（还钱）"
+                    },
+                    "depositCollateral(address,uint256)": {
+                        "notice": "单独存入抵押品 注意：前端在调用此函数前，需要先在 ERC20 代币合约上调用 approve 授权此合约扣款"
+                    },
+                    "depostitCollateralAndMintDsc(address,uint256,uint256)": {
+                        "notice": "存入抵押品并铸造稳定币（一步到位） 前端调用：用户输入抵押金额和想要借出的 DSC 金额"
+                    },
+                    "getAccountCollateralValue(address)": {
+                        "notice": "计算用户所有抵押品的总价值（折算为 USD）"
+                    },
+                    "getTokenAmountFromUsd(address,uint256)": {
+                        "notice": "将 USD 金额转换为对应的代币数量（如：100 美元等于多少个以太坊）"
+                    },
+                    "getUsdValue(address,uint256)": {
+                        "notice": "获取特定代币金额的 USD 价值"
+                    },
+                    "liquidate(address,address,uint256)": {
+                        "notice": "清算逻辑 如果一个用户的健康因子跌破 1，任何人都可以帮他还债，并拿走他的抵押品（外加 10% 奖金）"
+                    },
+                    "mintDsc(uint256)": {
+                        "notice": "铸造稳定币（借钱） 核心：系统会检查你的抵押品价值是否足够，不够会直接报错（Revert）"
+                    },
+                    "redeemCollateral(address,uint256)": {
+                        "notice": "取回抵押品逻辑"
+                    },
+                    "redeemCollateralForDsc(address,uint256,uint256)": {
+                        "notice": "销毁稳定币并取回抵押品"
+                    }
+                },
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
+                "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+                "chainlink-brownie-contracts/=lib/chainlink-brownie-contracts/",
+                "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+                "forge-std/=lib/forge-std/src/",
+                "halmos-cheatcodes/=lib/openzeppelin-contracts/lib/halmos-cheatcodes/src/",
+                "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+            ],
+            "optimizer": {
+                "enabled": false,
+                "runs": 200
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "src/DSCEngine.sol": "DSCEngine"
+            },
+            "evmVersion": "prague",
+            "libraries": {}
+        },
+        "sources": {
+            "lib/chainlink-brownie-contracts/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
+                "keccak256": "0x257a8d28fa83d3d942547c8e129ef465e4b5f3f31171e7be4739a4c98da6b4f0",
+                "urls": [
+                    "bzz-raw://6d39e11b1dc7b9b8ccdabbc9be442ab7cda4a81c748f57e316dcb1bcb4a28bf9",
+                    "dweb:/ipfs/QmaG6vz6W6iEUBsbHSBob5mdcitYxWjoygxREHpsJHfWrS"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
+                "keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+                "urls": [
+                    "bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+                    "dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol": {
+                "keccak256": "0x1b88b3fb3d85ba5496d7d5f396f83ee1fddcdd6762059ff65992655b67920998",
+                "urls": [
+                    "bzz-raw://89393bb3212da1c0889601b9706a07b39419ddc4d2faab9eaf6e7f9152cf6a1c",
+                    "dweb:/ipfs/QmcCfzzxv1Bkdz1c1yF4gQCeYb6Us5BJANnzTFqawfd1HL"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol": {
+                "keccak256": "0x669464167428061ee0f8618b73b3ee90aff8405683e7ddde8cd77dadaa1afe29",
+                "urls": [
+                    "bzz-raw://0dda78587a7358b4fdf6b9fca0fde5a5e34930f36d5268a16028627fc0170195",
+                    "dweb:/ipfs/QmQ1b6cCceDRWNxti9HifsTCzmVP25Haxs1bWugm52vTqH"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+                "keccak256": "0x74ed01eb66b923d0d0cfe3be84604ac04b76482a55f9dd655e1ef4d367f95bc2",
+                "urls": [
+                    "bzz-raw://5282825a626cfe924e504274b864a652b0023591fa66f06a067b25b51ba9b303",
+                    "dweb:/ipfs/QmeCfPykghhMc81VJTrHTC7sF6CRvaA1FXVq2pJhwYp1dV"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Burnable.sol": {
+                "keccak256": "0x2659248df25e34000ed214b3dc8da2160bc39874c992b477d9e2b1b3283dc073",
+                "urls": [
+                    "bzz-raw://c345af1b0e7ea28d1216d6a04ab28f5534a5229b9edf9ca3cd0e84950ae58d26",
+                    "dweb:/ipfs/QmY63jtSrYpLRe8Gj1ep2vMDCKxGNNG3hnNVKBVnrs2nmA"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+                "keccak256": "0xd6fa4088198f04eef10c5bce8a2f4d60554b7ec4b987f684393c01bf79b94d9f",
+                "urls": [
+                    "bzz-raw://f95ee0bbd4dd3ac730d066ba3e785ded4565e890dbec2fa7d3b9fe3bad9d0d6e",
+                    "dweb:/ipfs/QmSLr6bHkPFWT7ntj34jmwfyskpwo97T9jZUrk5sz3sdtR"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+                "keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+                "urls": [
+                    "bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+                    "dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol": {
+                "keccak256": "0xa516cbf1c7d15d3517c2d668601ce016c54395bf5171918a14e2686977465f53",
+                "urls": [
+                    "bzz-raw://1e1d079e8edfb58efd23a311e315a4807b01b5d1cf153f8fa2d0608b9dec3e99",
+                    "dweb:/ipfs/QmTBExeX2SDTkn5xbk5ssbYSx7VqRp9H4Ux1CY4uQM4b9N"
+                ],
+                "license": "MIT"
+            },
+            "lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol": {
+                "keccak256": "0xcf74f855663ce2ae00ed8352666b7935f6cddea2932fdf2c3ecd30a9b1cd0e97",
+                "urls": [
+                    "bzz-raw://9f660b1f351b757dfe01438e59888f31f33ded3afcf5cb5b0d9bf9aa6f320a8b",
+                    "dweb:/ipfs/QmarDJ5hZEgBtCmmrVzEZWjub9769eD686jmzb2XpSU1cM"
+                ],
+                "license": "MIT"
+            },
+            "src/DSCEngine.sol": {
+                "keccak256": "0xa3aed281c18c5af85baeb02c00a50e3791d87ac7b8fa48d4be0de3664f4ccff7",
+                "urls": [
+                    "bzz-raw://b45e29dafceb00d7a102216a62aca996d92a27f5cb53d4632a1d5ab6bc7aed78",
+                    "dweb:/ipfs/QmYb4kPmRJoXEo7DR9YmfhFBAKERVdNpYPmRoT1oesJKRq"
+                ],
+                "license": "MIT"
+            },
+            "src/DecentralizedStableCoin.sol": {
+                "keccak256": "0xfdb156bb5e194f48509e350d5012020ae1872647e050043375b047df42272235",
+                "urls": [
+                    "bzz-raw://ce3ef3cc61733e7f89f4aae6d09762dae8a7dfb04385152c8e190df69714c0cc",
+                    "dweb:/ipfs/QmTXXUeAQXNeZu5pWJh5GH7dVKaqMKvLYAaHeL5dhYhPqf"
+                ],
+                "license": "MIT"
+            },
+            "src/libraries/OracleLib.sol": {
+                "keccak256": "0xb7bc90ac13c39e6cbdc39ed2ebffad18987e552120061b71f87c799babd3b1b6",
+                "urls": [
+                    "bzz-raw://6d2d3fc8b555172fac5c0827e2fd0fcc89ffffa5e0e7461a7af7100058874505",
+                    "dweb:/ipfs/QmStpeGFBSsBspUfkBzTTwUwhPtqWh2nmzVZjwsBE713f2"
+                ],
+                "license": "MIT"
+            }
+        },
+        "version": 1
+    },
+    "id": 28
+}

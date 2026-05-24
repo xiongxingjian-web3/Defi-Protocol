@@ -1,0 +1,60 @@
+type CollateralDeposited @entity(immutable: true) {
+  id: String!
+  user: Bytes! # address
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CollateralRedeemed @entity(immutable: true) {
+  id: String!
+  user: Bytes! # address
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DscBurned @entity(immutable: true) {
+  id: String!
+  user: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DscMinted @entity(immutable: true) {
+  id: String!
+  user: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Liquidated @entity(immutable: true) {
+  id: String!
+  user: Bytes! # address
+  repayer: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type User @entity(immutable: false) {
+  id: ID!
+  totalDscMinted: BigInt!
+  collateralBalances: [CollateralBalance!]! @derivedFrom(field: "user")
+}
+
+type CollateralBalance @entity(immutable: false) {
+  id: ID!
+  user: User!
+  token: Bytes!
+  amount: BigInt!
+}

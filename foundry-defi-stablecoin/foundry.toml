@@ -1,0 +1,14 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+remappings = [
+    "@openzeppelin/contracts=lib/openzeppelin-contracts/contracts",
+    "@chainlink/contracts=lib/chainlink-brownie-contracts/contracts"
+]
+[invariant]
+runs =128
+depth=128
+fail_on_revert =false
+sender = "0x41548c5E5571eD572BB0f411c9eb308298Aa9cE1"
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
